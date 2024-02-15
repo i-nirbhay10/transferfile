@@ -361,18 +361,18 @@ function Table({
             )}
           </div>
         </div>
-        <div>
-          <table
-            className="table w-full table-auto text-left  border-2 border-[#CACACA] rounded-lg"
-            style={{ borderRadius: "50px" }}
-          >
+        <div
+          className="rounded-xl border border-[#CACACA] bg-[#FFFFFF] overflow-hidden"
+          style={{ paddingTop: 5 }}
+        >
+          <table className="table w-full table-auto text-left  rounded-lg">
             <thead className="h-10">
-              <tr className="bg-[#FFFFFF] text-[#118615] border-b-2 border-b-[#CACACA] rounded-lg ">
+              <tr className=" text-[#118615] border-b border-b-[#CACACA] rounded-lg ">
                 {columns.map((column) => (
                   <th
                     key={column.accessor}
                     onClick={() => handleHeaderClick(column.accessor)}
-                    className="px-5 py-5  cursor-pointer "
+                    className="px-5 py-2 cursor-pointer "
                   >
                     {column.header}
                     {sortConfig.key === column.accessor && (
@@ -390,13 +390,11 @@ function Table({
                 ))}
               </tr>
             </thead>
-            <tbody>
+            <tbody className="rounded-lg">
               {sortedData.map((row, index) => (
                 <tr
                   key={index}
-                  className={`bg-${
-                    index % 2 === 0 ? "[#EBF5EB]" : "[#FFFFFF]"
-                  }`}
+                  className={`bg-${index % 2 === 0 ? "[#EBF5EB]" : ""}`}
                 >
                   {columns?.map((column) => (
                     <td key={column.accessor} className="px-5 py-2">

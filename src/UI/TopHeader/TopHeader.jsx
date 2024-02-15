@@ -38,7 +38,7 @@ const TopHeader = (props) => {
               </h1>
             </div>
           ) : (
-            <span className="hidden">{props.head}</span>
+            <span className="">{props.head}</span>
           )}
         </div>
         <div className="py-2 px-4  rounded-xl border-2  border-[#118615] ">
